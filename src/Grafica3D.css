@@ -1,0 +1,101 @@
+.grafica3d-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: var(--bg-color-light, #fff);
+    color: var(--font-color-light, #213547);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .grafica3d-container h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--primary-color, #646cff);
+  }
+  
+  .axis-info {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    color: #6b7280; /* gris suave */
+  }
+  
+  .plot-wrapper {
+    width: 100%;
+    height: 600px;
+    min-height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(100, 100, 255, 0.15);
+    background-color: #f9faff;
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    .grafica3d-container {
+      background-color: var(--bg-color-dark, #242424);
+      color: var(--font-color-dark, #eee);
+      box-shadow: 0 6px 24px rgba(255, 255, 255, 0.08);
+    }
+  
+    .grafica3d-container h2 {
+      color: var(--primary-color-dark, #aabfff);
+    }
+  
+    .axis-info {
+      color: #9ca3af;
+    }
+  
+    .plot-wrapper {
+      background-color: #1a1a1a;
+      box-shadow: 0 8px 20px rgba(170, 187, 255, 0.15);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .plot-wrapper {
+      height: 400px;
+    }
+  }
+
+
+
+
+
+  .grafica3d-container {
+    max-width: 1000px;
+    width: 90vw;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", sans-serif;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    min-height: 80vh;
+  }
+  
+  .plot-wrapper {
+    width: 100%;
+    max-width: 700px; /* Limita ancho máximo para no ocupar todo el espacio */
+    height: 600px;
+    min-height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(100, 100, 255, 0.15);
+    background-color: #f9faff;
+  
+    /* Añadido para que el contenido interno (Plotly) tome 100% del ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

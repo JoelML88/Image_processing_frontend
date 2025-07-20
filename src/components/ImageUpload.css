@@ -1,0 +1,69 @@
+/* styles/ImageUpload.css */
+
+.image-upload {
+    border: 2px dashed #94a3b8;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    transition: border-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .image-upload:hover {
+    border-color: #2563eb;
+  }
+  
+  .image-upload input[type="file"] {
+    display: block;
+    margin: 12px auto 0;
+    font-size: 14px;
+  }
+  
+  .image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .image-preview {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .image-preview .remove-button {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: #ef4444; /* red-500 */
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .image-preview .remove-button:hover {
+    background-color: #b91c1c; /* red-700 */
+    transform: scale(1.05);
+  }
+  

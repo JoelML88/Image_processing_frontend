@@ -1,0 +1,316 @@
+/* index.css */
+
+/* Variables para colores (modo claro y oscuro) */
+:root {
+  --font-family-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-color-light: rgba(33, 53, 71, 0.87);
+  --font-color-dark: rgba(255, 255, 255, 0.87);
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #242424;
+
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+
+  --button-bg-light: #f9f9f9;
+  --button-bg-dark: #1a1a1a;
+  --button-border-hover: var(--primary-color);
+
+  --border-radius: 8px;
+  --transition-speed: 0.25s;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--font-color-light);
+    background-color: var(--bg-color-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--font-color-dark);
+    background-color: var(--bg-color-dark);
+  }
+}
+
+/* Base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  line-height: 1.5;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  color: inherit;
+  background-color: inherit;
+  place-items: center;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+a:hover,
+a:focus {
+  color: var(--primary-hover);
+  outline: none;
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin: 0.5em 0;
+  font-weight: 700;
+}
+
+/* Buttons */
+button {
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: var(--button-bg-dark);
+  color: var(--font-color-dark);
+  cursor: pointer;
+  transition: border-color var(--transition-speed), background-color var(--transition-speed);
+  user-select: none;
+}
+
+@media (prefers-color-scheme: light) {
+  button {
+    background-color: var(--button-bg-light);
+    color: var(--font-color-light);
+  }
+}
+
+button:hover:not(:disabled),
+button:focus-visible {
+  border-color: var(--button-border-hover);
+  outline-offset: 2px;
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  border-color: transparent;
+}
+
+/* Responsive layout helpers */
+@media (max-width: 768px) {
+  body {
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 2.4em;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.8em 1em;
+  }
+}
+
+
+/* theme.css */
+
+/* VARIABLES GLOBALES */
+:root {
+  --primary-color: #646cff;
+  --primary-color-dark: #aabfff;
+
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #242424;
+
+  --font-color-light: #213547;
+  --font-color-dark: #eeeeee;
+
+  --button-disabled: #94a3b8;
+  --button-hover: #4f57e6;
+
+  --border-radius: 12px;
+  --box-shadow-light: 0 6px 24px rgba(0, 0, 0, 0.1);
+  --box-shadow-dark: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* RESET GENERAL */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color-light);
+  color: var(--font-color-light);
+  min-height: 100vh;
+}
+
+/* MODO OSCURO */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-color-dark);
+    color: var(--font-color-dark);
+  }
+}
+
+/* CONTENEDOR PRINCIPAL REUTILIZABLE */
+.container {
+  max-width: 1000px;
+  width: 90vw;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-color-light);
+  box-shadow: var(--box-shadow-light);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  min-height: 80vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: var(--bg-color-dark);
+    box-shadow: var(--box-shadow-dark);
+  }
+}
+
+/* TÍTULOS CONSISTENTES */
+.container h2,
+.container h3 {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* ETIQUETAS E INPUTS */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type="text"],
+  input[type="number"],
+  input[type="file"] {
+    background-color: #1a1a1a;
+    border-color: #444;
+    color: var(--font-color-dark);
+  }
+
+  label {
+    color: #ccc;
+  }
+}
+
+/* BOTONES ESTÁNDAR */
+button {
+  padding: 10px 18px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--button-hover);
+}
+
+button:disabled {
+  background-color: var(--button-disabled);
+  cursor: not-allowed;
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    background-color: var(--primary-color-dark);
+    color: #000;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: #7a8fff;
+  }
+
+  button:disabled {
+    background-color: #555;
+  }
+}
+
+/* GRUPOS DE BOTONES */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* CONTROLES FLEXIBLES */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  label {
+    flex: 1 1 45%;
+  }
+}
+
+/* RESPONSIVE TÍTULOS E INPUTS */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .container h2 {
+    font-size: 22px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+}
